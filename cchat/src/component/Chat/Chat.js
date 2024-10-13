@@ -2,10 +2,10 @@ import React, { useEffect, useState} from 'react'
 import { user } from "../Jion/Jion";
 import socketIo from "socket.io-client";
 import "./Chat.css";
-import sendLogo from "../../images/send.png";
+import sendLogo from "../../Images/send.png";
 import Message from "../Message/Message";
 import ReactScrollToBottom from "react-scroll-to-bottom";
-import closeIcon from "../../images/closeIcon.png";
+import closeIcon from "../../Images/closeIcon.png";
 
 let socket;
 const ENDPOINT = "http://localhost:4500/";
