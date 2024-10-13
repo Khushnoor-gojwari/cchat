@@ -8,7 +8,7 @@ import ReactScrollToBottom from "react-scroll-to-bottom";
 import closeIcon from "../../Images/closeIcon.png";
 
 let socket;
-const ENDPOINT = "http://localhost:4500/";
+const ENDPOINT = "https://real-time-chat-iik9.vercel.app/";
 
 const Chat=()=>{
     const [id,setid]=useState("");
