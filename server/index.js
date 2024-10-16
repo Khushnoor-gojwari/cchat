@@ -47,6 +47,4 @@ server.listen(port, () => {
     console.log(`Server is running on port http://localhost:${port}`);
 });
 
-server.listen(port,()=>{
-    console.log(`Working`);
-})
+
