@@ -1,17 +1,22 @@
+require('dotenv').config();
 const http=require("http");
 const express =require("express");
 const cors = require("cors");
 const socketIO = require("socket.io");
 
 const app=express();
-const port= 4500;
+const port= process.env.PORT   || 4500;
 
 
 const users=[{}];
 
-app.use(cors());
+const frontendUrl = process.env.CLIENT_URL || 'https://cchat-f.vercel.app/chat';
+app.use(cors({
+    origin: frontendUrl,
+}));
+
 app.get("/",(req,res)=>{
-    res.send("HELL ITS WORKING");
+    res.send("HELL Server is  WORKING");
 })
 
 const server=http.createServer(app);
@@ -37,7 +42,10 @@ io.on("connection",(socket)=>{
         console.log(`user left`);
     })
 });
-
+// Listen on the port
+server.listen(port, () => {
+    console.log(`Server is running on port http://localhost:${port}`);
+});
 
 server.listen(port,()=>{
     console.log(`Working`);
